@@ -133,3 +133,5 @@ $routes->get('test-email', 'Login::aaa'); //http://localhost/bimbingan-belajar/p
 // $routes->post('karyawan/editCuti/(:num)', 'Karyawan::editCuti/$1', ['as' => 'karyawan.editCuti']);
 
 // GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
+
+//ppppppp

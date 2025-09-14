@@ -48,60 +48,61 @@
             </div>
         </header>
         <!-- Icons Grid-->
-        <section class="features-icons bg-light text-center">
-            <div class="container">
-                <div class="row">
+        <section class="features-icons bg-light text-center py-5">
+        <div class="container">
+            <div class="row">
 
-                    <!-- PAKET REGULER -->
-                    <div class="col-lg-4">
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-body" data-bs-toggle="collapse" data-bs-target="#reguler" style="cursor:pointer;">
-                                <div class="features-icons-icon d-flex"><i class="bi-window m-auto text-primary fs-1"></i></div>
-                                <h5 class="mt-3">PAKET REGULER</h5>
+                <!-- PAKET REGULER -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card shadow-sm border-0 h-100 paket-card"
+                        onclick="window.location.href='<?= base_url('paket/reguler'); ?>'">
+                        <div class="card-body text-center">
+                            <div class="features-icons-icon mb-3">
+                                <i class="bi-window text-primary fs-1"></i>
                             </div>
-                            <div id="reguler" class="collapse">
-                                <div class="card-footer text-start">
-                                    Tingkat SMP/SMA/SMK Mencakup materi untuk persiapan ujian sekolah umum
-                                </div>
-                            </div>
+                            <h5 class="fw-bold">PAKET REGULER</h5>
+                            <p class="text-muted mt-2">
+                                Tingkat SMP/SMA/SMK mencakup materi persiapan ujian sekolah umum.
+                            </p>
                         </div>
                     </div>
-
-                    <!-- PAKET PLUS -->
-                    <div class="col-lg-4">
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-body" data-bs-toggle="collapse" data-bs-target="#plus" style="cursor:pointer;">
-                                <div class="features-icons-icon d-flex"><i class="bi-layers m-auto text-primary fs-1"></i></div>
-                                <h5 class="mt-3">PAKET PLUS</h5>
-                            </div>
-                            <div id="plus" class="collapse">
-                                <div class="card-footer text-start">
-                                    Tingkat SMP/SMA/SMK Mencakup materi untuk persiapan ujian sekolah umum 
-                                    dan persiapan ujian khusus atau tambahan paket menguasai bahasa inggris dengan kurikulum khusus
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- BIMBEL ONLINE -->
-                    <div class="col-lg-4">
-                        <div class="card shadow-sm mb-4">
-                            <div class="card-body" data-bs-toggle="collapse" data-bs-target="#online" style="cursor:pointer;">
-                                <div class="features-icons-icon d-flex"><i class="bi-terminal m-auto text-primary fs-1"></i></div>
-                                <h5 class="mt-3">BIMBEL ONLINE</h5>
-                            </div>
-                            <div id="online" class="collapse">
-                                <div class="card-footer text-start">
-                                    Bimbel layanan pendidikan yang memungkinkan siswa belajar secara daring melalui internet,
-                                    menggunakan berbagai platform seperti situs web atau aplikasi
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- PAKET PLUS -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card shadow-sm border-0 h-100 paket-card"
+                        onclick="window.location.href='<?= base_url('paket/plus'); ?>'">
+                        <div class="card-body text-center">
+                            <div class="features-icons-icon mb-3">
+                                <i class="bi-layers text-success fs-1"></i>
+                            </div>
+                            <h5 class="fw-bold">PAKET PLUS</h5>
+                            <p class="text-muted mt-2">
+                                Materi umum + persiapan ujian khusus & kurikulum bahasa Inggris intensif.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BIMBEL ONLINE -->
+                <div class="col-lg-4 mb-4">
+                    <div class="card shadow-sm border-0 h-100 paket-card"
+                        onclick="window.location.href='<?= base_url('paket/online'); ?>'">
+                        <div class="card-body text-center">
+                            <div class="features-icons-icon mb-3">
+                                <i class="bi-terminal text-info fs-1"></i>
+                            </div>
+                            <h5 class="fw-bold">BIMBEL ONLINE</h5>
+                            <p class="text-muted mt-2">
+                                Belajar fleksibel secara daring melalui platform website & aplikasi modern.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </section>
+        </div>
+    </section>
 
         <!-- Image Showcases-->
 

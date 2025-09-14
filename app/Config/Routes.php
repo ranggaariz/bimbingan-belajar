@@ -137,3 +137,7 @@ $routes->get('test-email', 'Login::aaa'); //http://localhost/bimbingan-belajar/p
 // GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 
 //ppppppp
+
+$routes->get('paket/reguler', 'PaketController::reguler');
+$routes->get('paket/plus', 'PaketController::plus');
+$routes->get('paket/online', 'PaketController::online');

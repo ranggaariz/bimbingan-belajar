@@ -18,7 +18,8 @@
             <div class="card">
                 <div class="card-body">
                     <?php if (session()->get('role') == 'Pengajar') : ?>
-                        <a class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambah">Tambah Soal</a>
+                        <!-- <a class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambah">Tambah Soal</a> -->
+                        <a href="<?= base_url(route_to('pengajar.formSoal')) ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah Soal</a>
                         <hr>
                     <?php endif; ?>
                     

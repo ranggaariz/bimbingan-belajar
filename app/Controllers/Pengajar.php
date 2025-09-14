@@ -331,4 +331,51 @@ class Pengajar extends BaseController
             . view('pages/nilai', $data)
             . view('templates/footer');
     }
+
+    public function formSoal()
+    {
+        if (session()->get('role') != 'Pengajar') {
+            return redirect()->to(base_url('login/index'));
+        }
+
+        $data = [
+            'title' => 'Bimbingan Belajar'
+        ];
+
+        return view('templates/header', $data)
+            . view('templates/sidebar', $data)
+            . view('form/form_soal', $data)
+            . view('templates/footer');
+    }
+
+    public function addSoal2()
+    {
+        $db = \Config\Database::connect();
+
+        $data = [
+            'soal' => $this->request->getPost('soal')
+        ];
+
+        $this->soalModel->saveSoal($data);
+
+        // Ambil id soal yang baru saja dimasukkan
+        $id_soal = $this->soalModel->getInsertID();
+
+        // 2. Ambil data jawaban dari form
+        $jawabanList = $this->request->getPost('jawaban'); // array
+        $benar = $this->request->getPost('benar'); // 1,2,3,4 sesuai radio button
+
+        // 3. Loop untuk simpan ke tabel jawaban
+        foreach ($jawabanList as $key => $val) {
+            $jawabanData = [
+                'id_soal' => $id_soal,
+                'jawaban' => $val,
+                'benar'   => ($benar == $key) ? 1 : 0
+            ];
+            $db->table('jawaban')->insert($jawabanData);
+        }
+
+        session()->setFlashdata('message', '<div class="alert alert-success">Add data successfully.</div>');
+        return redirect()->to(base_url('pengajar/soal'));
+    }
 }

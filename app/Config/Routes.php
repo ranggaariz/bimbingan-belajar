@@ -104,6 +104,8 @@ $routes->post('pelajar/submitTryout', 'Pelajar::submitTryout', ['as' => 'pelajar
 
 $routes->get('pelajar/materi', 'Pelajar::materi');
 
+$routes->get('test-email', 'Login::aaa'); //http://localhost/bimbingan-belajar/public/test-email
+
 // $routes->get('karyawan', 'Karyawan::index');
 // $routes->get('karyawan/index', 'Karyawan::index');
 // $routes->get('karyawan/openUser/(:num)', 'Karyawan::openUser/$1', ['as' => 'karyawan.openUser']);

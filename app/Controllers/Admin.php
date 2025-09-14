@@ -179,6 +179,34 @@ class Admin extends BaseController
         $builder->where('id_user', $id_user);
         $builder->update(['is_active' => 1]);
 
+        // ambil email user yg di-approve
+        $user = $builder->where('id_user', $id_user)->get()->getRow();
+
+        if ($user) {
+            $email = \Config\Services::email();
+
+            // load konfigurasi dari app/Config/Email.php
+            $config = new \Config\Email();
+            $email->initialize($config);
+
+            $email->setFrom('israwinda05@gmail.com', 'Admin Bimbel');
+            $email->setTo($user->email);
+
+            $email->setSubject('Akun Kamu Sudah Aktif');
+            $email->setMessage("
+                <h3>Halo {$user->nama},</h3>
+                <p>Akun kamu sudah berhasil diaktifkan oleh admin. 
+                Sekarang kamu bisa login ke aplikasi dan mulai menggunakan layanan.</p>
+                <br>
+                <p>Salam,<br>Admin</p>
+            ");
+
+            if (! $email->send()) {
+                log_message('error', 'Email gagal dikirim ke ' . $user->email);
+                log_message('error', print_r($email->printDebugger(['headers']), true));
+            }
+        }
+
         return redirect()->to(base_url('admin/daftarPelajar'));
     }
     

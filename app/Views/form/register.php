@@ -44,21 +44,29 @@
                                 <?php endif; ?>
                             </div>
                             
-                            <label for="name" class="col-sm-2 col-form-label">Umur</label>
+                            <label for="name" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-4">
-                                <input type="number" class="form-control" id="name" name="umur" value="<?= old('umur') ?>">
-                                <?php if (isset($validation) && $validation->getError('umur')): ?>
-                                    <div class="text-danger"><?= $validation->getError('umur') ?></div>
+                                <input type="text" class="form-control" id="name" name="email" value="<?= old('email') ?>">
+                                <?php if (isset($validation) && $validation->getError('email')): ?>
+                                    <div class="text-danger"><?= $validation->getError('email') ?></div>
                                 <?php endif; ?>
                             </div>
                         </div>
 
                         <div class="form-group row">
                             <label for="username" class="col-sm-2 col-form-label">Alamat</label>
-                            <div class="col-sm-10">
+                            <div class="col-sm-4">
                                 <input type="text" class="form-control" id="username" name="alamat" value="<?= old('alamat') ?>">
                                 <?php if (isset($validation) && $validation->getError('alamat')): ?>
                                     <div class="text-danger"><?= $validation->getError('alamat') ?></div>
+                                <?php endif; ?>
+                            </div>
+                            
+                            <label for="name" class="col-sm-2 col-form-label">Umur</label>
+                            <div class="col-sm-4">
+                                <input type="number" class="form-control" id="name" name="umur" value="<?= old('umur') ?>">
+                                <?php if (isset($validation) && $validation->getError('umur')): ?>
+                                    <div class="text-danger"><?= $validation->getError('umur') ?></div>
                                 <?php endif; ?>
                             </div>
                         </div>

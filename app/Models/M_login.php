@@ -9,7 +9,7 @@ class M_login extends Model
     protected $table = 'tbl_user'; // Nama tabel
     protected $primaryKey = 'id_user'; // Primary key tabel
     protected $allowedFields = [
-        'nama', 'username', 'password', 'role', 'is_active','umur','tingkatan','no_hp','jenis_kelamin','alamat', 'userfile'
+        'nama', 'username', 'password', 'role', 'is_active','umur','tingkatan','no_hp','jenis_kelamin','alamat', 'userfile', 'email'
     ]; // Kolom yang diizinkan untuk diisi
 
     /**

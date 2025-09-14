@@ -121,6 +121,7 @@ class Login extends BaseController
             'alamat' => $this->request->getPost('alamat'),
             'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
             'password' => $this->request->getPost('password'),
+            'email' => $this->request->getPost('email'),
             'role' => 'Pelajar',
             'userfile' => $newName,
             "is_active" => 0
@@ -159,5 +160,24 @@ class Login extends BaseController
         $this->ml->updatePass();
         session()->setFlashdata('password', '<div class="alert alert-success">Password berhasil diupdate.</div>');
         return redirect()->to('/login');
+    }
+
+    public function aaa()
+    {
+        $email = \Config\Services::email();
+        $config = new \Config\Email();
+        $email->initialize($config);
+
+        $email->setFrom('israwinda05@gmail.com', 'Admin Bimbel');
+        $email->setTo('pblkusukses100persen@gmail.com'); // ganti email penerima
+
+        $email->setSubject('Test Kirim Email dari Localhost');
+        $email->setMessage('<p>Halo! Ini percobaan kirim email dari CodeIgniter 4 di localhost.</p>');
+
+        if ($email->send()) {
+            echo "✅ Email berhasil dikirim!";
+        } else {
+            echo $email->printDebugger(['headers', 'subject', 'body']);
+        }
     }
 }

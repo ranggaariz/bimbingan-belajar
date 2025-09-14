@@ -45,41 +45,7 @@
                                     <td><?= esc($row->soal) ?></td>
                                     <?php if (session()->get('role') == 'Pengajar') :?> 
                                     <td>
-                                        <a class="btn btn-success btn-sm" data-toggle="modal" data-target="#edit<?=$row->id_soal?>"><i class="fa fa-edit"></i></a>
-                                        <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="edit<?=$row->id_soal?>" class="modal fade">
-                                                 <div class="modal-dialog modal-lg">
-                                                     <div class="modal-content">
-                                                         <div class="modal-header">
-                                                             <h5 class="modal-title" id="LabelModal">Edit Jadwal</h5>
-                                                             <button type="button" class="close" data-dismiss="modal" arial-label="Close">
-                                                                <span arial-hidden="true">&times;</span>
-                                                            </button>
-                                                         </div>
-                                                          <div class="modal-body">
-                                                                  <?php
-                                                                echo form_open_multipart('pengajar/editSoal/'.$row->id_soal);
-                                                                ?>
-                                                                <div class="form-group row">
-                                                                    <label for="nama" class="col-sm-2 col-form-label">Judul Soal</label>
-                                                                    <div class="col-sm-10">
-                                                                        <input type="hidden" class="form-control" name="id_soal" value="<?=$row->id_soal; ?>">
-                                                                        <input type="text" class="form-control" name="soal" value="<?=$row->soal; ?>">
-                                                                        <small class="text-danger">
-                                                                        </small>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-group row">
-                                                                    <div class="col-sm-10 offset-md-2">
-                                                                        <button type="submit" class="btn btn-primary">Simpan</button>
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal"> Batal</button>
-                                                                    </div>
-                                                                </div>
-                                                                <?php echo form_close(); ?>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                            <a href="<?= base_url(route_to('pengajar.formJawaban', $row->id_soal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-book"></i></a>
+                                            <a href="<?= base_url(route_to('pengajar.formEditSoal', $row->id_soal)) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
                                             <a href="javascript:void(0);" data-id="<?= $row->id_soal ?>" class="btn btn-danger btn-sm item-delete"><i class="fa fa-trash"></i> </a>
                                         </td>
                                     <?php endif; ?>

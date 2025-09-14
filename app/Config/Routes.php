@@ -69,7 +69,9 @@ $routes->post('pengajar/uploadMateri/(:num)', 'Pengajar::uploadMateri/$1', ['as'
 $routes->get('pengajar/deleteMateri', 'Pengajar::deleteMateri', ['as' => 'pengajar.deleteMateri']);
 $routes->get('pengajar/tryout', 'Pengajar::tryout');
 $routes->get('pengajar/formSoal', 'Pengajar::formSoal', ['as' => 'pengajar.formSoal']);
+$routes->get('pengajar/formEditSoal/(:num)', 'Pengajar::formEditSoal/$1', ['as' => 'pengajar.formEditSoal']);
 $routes->post('pengajar/addSoal2', 'Pengajar::addSoal2');
+$routes->post('pengajar/updateSoal/(:num)', 'Pengajar::updateSoal/$1', ['as' => 'pengajar.updateSoal']);
 
 // $routes->get('supervisor', 'Supervisor::index');
 // $routes->get('supervisor/index', 'Supervisor::index');

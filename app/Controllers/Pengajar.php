@@ -378,4 +378,56 @@ class Pengajar extends BaseController
         session()->setFlashdata('message', '<div class="alert alert-success">Add data successfully.</div>');
         return redirect()->to(base_url('pengajar/soal'));
     }
+
+    public function formEditSoal($id_soal)
+    {
+        // ambil data soal
+        $soal = $this->soalModel->find($id_soal);
+
+        if (! $soal) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Soal dengan ID $id_soal tidak ditemukan");
+        }
+
+        // ambil jawaban-jawaban untuk soal ini
+        $jawaban = $this->jawabanModel
+            ->where('id_soal', $id_soal)
+            ->findAll();
+
+        $data = [
+            'title'   => 'Edit Soal',
+            'soal'    => $soal,
+            'jawaban' => $jawaban
+        ];
+
+        return view('templates/header', $data)
+            . view('templates/sidebar', $data)
+            . view('form/edit_soal', $data)
+            . view('templates/footer');
+}
+
+    public function updateSoal($id_soal)
+    {
+        // ambil data soal yang diedit
+        $soal = $this->request->getPost('soal');
+        $jawaban = $this->request->getPost('jawaban');
+        $id_jawaban = $this->request->getPost('id_jawaban');
+        $benar = $this->request->getPost('benar'); // index jawaban yang benar
+
+        // update soal
+        $this->soalModel->update($id_soal, [
+            'soal' => $soal
+        ]);
+
+        // loop jawaban
+        foreach ($jawaban as $index => $jwb) {
+            $this->jawabanModel->update($id_jawaban[$index], [
+                'jawaban' => $jwb,
+                'benar'   => ($index == $benar) ? 1 : 0
+            ]);
+        }
+
+        session()->setFlashdata('message', '<div class="alert alert-success">Data berhasil diupdate.</div>');
+        return redirect()->to(base_url('pengajar/soal'));
+    }
+
 }

@@ -1,0 +1,181 @@
+INFO - 2024-12-02 02:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:41:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:41:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:41:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:41:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:42:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:42:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:42:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:42:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:42:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:43:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 02:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-02 03:04:26 --> mysqli_sql_exception: Column 'race' cannot be null in D:\xampp\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\xampp\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 D:\xampp\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 D:\xampp\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 D:\xampp\htdocs\manajemen-karyawan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 D:\xampp\htdocs\manajemen-karyawan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\xampp\htdocs\manajemen-karyawan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\xampp\htdocs\manajemen-karyawan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\xampp\htdocs\manajemen-karyawan\app\Models\AdminModel.php(28): CodeIgniter\Model->insert(Array)
+#8 D:\xampp\htdocs\manajemen-karyawan\app\Controllers\Admin.php(127): App\Models\AdminModel->saveUser(Array)
+#9 D:\xampp\htdocs\manajemen-karyawan\system\CodeIgniter.php(933): App\Controllers\Admin->addUser()
+#10 D:\xampp\htdocs\manajemen-karyawan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#11 D:\xampp\htdocs\manajemen-karyawan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\xampp\htdocs\manajemen-karyawan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\xampp\htdocs\manajemen-karyawan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\xampp\htdocs\manajemen-karyawan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2024-12-02 03:04:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'race' cannot be null
+[Method: POST, Route: admin/addUser]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `race`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (:name:, :username:, :password:, :role:, :employee_number:, :join_date:, :department:, :card_number:, :gender:, :tempat_lahir:, :tanggal_lahir:, :religion:, :race:, :last_education:, :blood_type:, :phone_number:, :email:, :address:, :city:, :province:, :postal_code:, :contact_name:, :contact_relation:, :contact_phone:, :martial_status:, :dependent_total:, :jabatan:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\AdminModel.php(28): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Admin.php(127): App\Models\AdminModel->saveUser([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->addUser()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-02 03:04:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'race' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `race`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `race`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `race`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (:name:, :username:, :password:, :role:, :employee_number:, :join_date:, :department:, :card_number:, :gender:, :tempat_lahir:, :tanggal_lahir:, :religion:, :race:, :last_education:, :blood_type:, :phone_number:, :email:, :address:, :city:, :province:, :postal_code:, :contact_name:, :contact_relation:, :contact_phone:, :martial_status:, :dependent_total:, :jabatan:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\AdminModel.php(28): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Admin.php(127): App\Models\AdminModel->saveUser([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->addUser()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-02 03:04:26 --> [Caused by] mysqli_sql_exception: Column 'race' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `race`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `race`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `race`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `race`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (:name:, :username:, :password:, :role:, :employee_number:, :join_date:, :department:, :card_number:, :gender:, :tempat_lahir:, :tanggal_lahir:, :religion:, :race:, :last_education:, :blood_type:, :phone_number:, :email:, :address:, :city:, :province:, :postal_code:, :contact_name:, :contact_relation:, :contact_phone:, :martial_status:, :dependent_total:, :jabatan:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\AdminModel.php(28): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Admin.php(127): App\Models\AdminModel->saveUser([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->addUser()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-12-02 03:04:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-12-02 03:05:12 --> mysqli_sql_exception: Column 'last_education' cannot be null in D:\xampp\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 D:\xampp\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 D:\xampp\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 D:\xampp\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 D:\xampp\htdocs\manajemen-karyawan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 D:\xampp\htdocs\manajemen-karyawan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 D:\xampp\htdocs\manajemen-karyawan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 D:\xampp\htdocs\manajemen-karyawan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 D:\xampp\htdocs\manajemen-karyawan\app\Models\AdminModel.php(28): CodeIgniter\Model->insert(Array)
+#8 D:\xampp\htdocs\manajemen-karyawan\app\Controllers\Admin.php(127): App\Models\AdminModel->saveUser(Array)
+#9 D:\xampp\htdocs\manajemen-karyawan\system\CodeIgniter.php(933): App\Controllers\Admin->addUser()
+#10 D:\xampp\htdocs\manajemen-karyawan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#11 D:\xampp\htdocs\manajemen-karyawan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 D:\xampp\htdocs\manajemen-karyawan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 D:\xampp\htdocs\manajemen-karyawan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 D:\xampp\htdocs\manajemen-karyawan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2024-12-02 03:05:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'last_education' cannot be null
+[Method: POST, Route: admin/addUser]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (:name:, :username:, :password:, :role:, :employee_number:, :join_date:, :department:, :card_number:, :gender:, :tempat_lahir:, :tanggal_lahir:, :religion:, :last_education:, :blood_type:, :phone_number:, :email:, :address:, :city:, :province:, :postal_code:, :contact_name:, :contact_relation:, :contact_phone:, :martial_status:, :dependent_total:, :jabatan:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\AdminModel.php(28): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Admin.php(127): App\Models\AdminModel->saveUser([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->addUser()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-02 03:05:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'last_education' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (:name:, :username:, :password:, :role:, :employee_number:, :join_date:, :department:, :card_number:, :gender:, :tempat_lahir:, :tanggal_lahir:, :religion:, :last_education:, :blood_type:, :phone_number:, :email:, :address:, :city:, :province:, :postal_code:, :contact_name:, :contact_relation:, :contact_phone:, :martial_status:, :dependent_total:, :jabatan:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\AdminModel.php(28): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Admin.php(127): App\Models\AdminModel->saveUser([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->addUser()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-02 03:05:12 --> [Caused by] mysqli_sql_exception: Column 'last_education' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (\'vvv\', \'vvv\', \'123\', \'Karyawan\', \'111\', \'2024-12-02\', \'eee\', \'432432\', \'Laki-laki\', \'Batam\', \'2018-02-01\', \'Islam\', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, \'Karyawan\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_user` (`name`, `username`, `password`, `role`, `employee_number`, `join_date`, `department`, `card_number`, `gender`, `tempat_lahir`, `tanggal_lahir`, `religion`, `last_education`, `blood_type`, `phone_number`, `email`, `address`, `city`, `province`, `postal_code`, `contact_name`, `contact_relation`, `contact_phone`, `martial_status`, `dependent_total`, `jabatan`) VALUES (:name:, :username:, :password:, :role:, :employee_number:, :join_date:, :department:, :card_number:, :gender:, :tempat_lahir:, :tanggal_lahir:, :religion:, :last_education:, :blood_type:, :phone_number:, :email:, :address:, :city:, :province:, :postal_code:, :contact_name:, :contact_relation:, :contact_phone:, :martial_status:, :dependent_total:, :jabatan:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\AdminModel.php(28): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Admin.php(127): App\Models\AdminModel->saveUser([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->addUser()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-12-02 03:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 03:07:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-12-02 03:07:31 --> Error: Call to undefined function form_error()
+[Method: GET, Route: admin/formUser]
+in APPPATH\Views\form\user.php on line 161.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('form/user', [], true)
+ 4 APPPATH\Controllers\Admin.php(72): view('form/user', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin->formUser()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-12-02 03:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 03:09:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 03:10:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 03:11:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 03:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-12-02 03:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

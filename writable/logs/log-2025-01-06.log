@@ -1,0 +1,376 @@
+INFO - 2025-01-06 01:16:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:16:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:17:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:21:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:21:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:22:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-06 01:22:54 --> mysqli_sql_exception: Column 'type' cannot be null in C:\xampp-8\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp-8\htdocs\manajemen-karyawan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp-8\htdocs\manajemen-karyawan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp-8\htdocs\manajemen-karyawan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp-8\htdocs\manajemen-karyawan\app\Models\CutiModel.php(22): CodeIgniter\Model->insert(Array)
+#8 C:\xampp-8\htdocs\manajemen-karyawan\app\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti(Array)
+#9 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+#10 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#11 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp-8\htdocs\manajemen-karyawan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp-8\htdocs\manajemen-karyawan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp-8\htdocs\manajemen-karyawan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-01-06 01:22:54 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'type' cannot be null
+[Method: POST, Route: karyawan/addCuti]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 01:22:54 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'type' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 01:22:54 --> [Caused by] mysqli_sql_exception: Column 'type' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-01-06 01:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:24:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:25:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:25:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:27:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:28:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:29:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:29:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:32:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:32:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:32:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:32:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:35:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:36:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:36:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:37:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:37:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:37:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:37:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 01:38:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:10:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:10:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:10:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:10:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:10:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:11:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:11:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:11:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:11:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:11:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:11:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:11:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-06 02:11:42 --> mysqli_sql_exception: Column 'type' cannot be null in C:\xampp-8\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp-8\htdocs\manajemen-karyawan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp-8\htdocs\manajemen-karyawan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp-8\htdocs\manajemen-karyawan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp-8\htdocs\manajemen-karyawan\app\Models\CutiModel.php(22): CodeIgniter\Model->insert(Array)
+#8 C:\xampp-8\htdocs\manajemen-karyawan\app\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti(Array)
+#9 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+#10 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#11 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp-8\htdocs\manajemen-karyawan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp-8\htdocs\manajemen-karyawan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp-8\htdocs\manajemen-karyawan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-01-06 02:11:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'type' cannot be null
+[Method: POST, Route: karyawan/addCuti]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 02:11:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'type' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 02:11:42 --> [Caused by] mysqli_sql_exception: Column 'type' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-01-06 02:20:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 02:21:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-06 02:21:01 --> mysqli_sql_exception: Column 'type' cannot be null in C:\xampp-8\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp-8\htdocs\manajemen-karyawan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp-8\htdocs\manajemen-karyawan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp-8\htdocs\manajemen-karyawan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp-8\htdocs\manajemen-karyawan\app\Models\CutiModel.php(22): CodeIgniter\Model->insert(Array)
+#8 C:\xampp-8\htdocs\manajemen-karyawan\app\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti(Array)
+#9 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+#10 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#11 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp-8\htdocs\manajemen-karyawan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp-8\htdocs\manajemen-karyawan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp-8\htdocs\manajemen-karyawan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-01-06 02:21:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'type' cannot be null
+[Method: POST, Route: karyawan/addCuti]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 02:21:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'type' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 02:21:01 --> [Caused by] mysqli_sql_exception: Column 'type' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'urusan keluarga\', \'2025-01-07\', \'2025-01-08\', NULL, \'3\', \'Karyawan\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-01-06 04:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:42:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:42:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:42:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:42:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:43:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:43:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:43:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-01-06 04:43:29 --> mysqli_sql_exception: Column 'type' cannot be null in C:\xampp-8\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tb...', 0)
+#1 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tb...')
+#2 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tb...')
+#3 C:\xampp-8\htdocs\manajemen-karyawan\system\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tb...', Array, false)
+#4 C:\xampp-8\htdocs\manajemen-karyawan\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp-8\htdocs\manajemen-karyawan\system\BaseModel.php(840): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp-8\htdocs\manajemen-karyawan\system\Model.php(802): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp-8\htdocs\manajemen-karyawan\app\Models\CutiModel.php(22): CodeIgniter\Model->insert(Array)
+#8 C:\xampp-8\htdocs\manajemen-karyawan\app\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti(Array)
+#9 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+#10 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+#11 C:\xampp-8\htdocs\manajemen-karyawan\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 C:\xampp-8\htdocs\manajemen-karyawan\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#13 C:\xampp-8\htdocs\manajemen-karyawan\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 C:\xampp-8\htdocs\manajemen-karyawan\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-01-06 04:43:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'type' cannot be null
+[Method: POST, Route: karyawan/addCuti]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 6 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 04:43:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'type' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'aaa\', \'2025-01-06\', \'2025-01-07\', NULL, \'3\', \'Karyawan\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'aaa\', \'2025-01-06\', \'2025-01-07\', NULL, \'3\', \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 8 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-06 04:43:29 --> [Caused by] mysqli_sql_exception: Column 'type' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'aaa\', \'2025-01-06\', \'2025-01-07\', NULL, \'3\', \'Karyawan\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'aaa\', \'2025-01-06\', \'2025-01-07\', NULL, \'3\', \'Karyawan\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (\'aaa\', \'2025-01-06\', \'2025-01-07\', NULL, \'3\', \'Karyawan\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2340): CodeIgniter\Database\BaseConnection->query('INSERT INTO `tbl_cuti` (`keterangan`, `date_from`, `date_until`, `type`, `id_user`, `status`) VALUES (:keterangan:, :date_from:, :date_until:, :type:, :id_user:, :status:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(840): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(802): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Models\CutiModel.php(22): CodeIgniter\Model->insert([...])
+ 9 APPPATH\Controllers\Karyawan.php(259): App\Models\CutiModel->saveCuti([...])
+10 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Karyawan->addCuti()
+11 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Karyawan))
+12 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+13 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+14 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+15 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-01-06 04:43:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:44:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:45:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:45:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:45:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:45:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:46:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:46:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:47:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:48:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-01-06 04:48:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

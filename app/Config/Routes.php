@@ -131,3 +131,5 @@ $routes->get('test-email', 'Login::aaa'); //http://localhost/bimbingan-belajar/p
 // $routes->get('karyawan/openSeragam/(:num)/(:num)', 'Karyawan::openSeragam/$1/$2');
 // // $routes->post('karyawan/addCuti', 'Karyawan::addCuti');
 // $routes->post('karyawan/editCuti/(:num)', 'Karyawan::editCuti/$1', ['as' => 'karyawan.editCuti']);
+
+// GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG

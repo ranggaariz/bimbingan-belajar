@@ -8,7 +8,7 @@
             </ol>
         </nav>
 
-        <?= form_open('pengajar/addSoal2'); ?>
+        <?= form_open('pengajar/addSoal2/' . $id_jadwal); ?>
 
         <div class="card">
             <div class="card-body">

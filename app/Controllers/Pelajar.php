@@ -144,6 +144,24 @@ class Pelajar extends BaseController
 
         return view('templates/header', $data)
             . view('templates/sidebar', $data)
+            . view('pages/jadwal_materi', $data)
+            . view('templates/footer');
+    }
+    
+    public function materiDetail($id_jadwal)
+    {
+        if (session()->get('role') !== 'Pelajar') {
+            return redirect()->to(base_url('login/index'));
+        }
+
+        $data = [
+            'title' => 'Bimbingan Belajar | Materi',
+            'data_master' => $this->materiModel->getMateriDetail($id_jadwal),
+            'pelajaran' => $this->jadwalModel->getJadwal(),
+        ];
+
+        return view('templates/header', $data)
+            . view('templates/sidebar', $data)
             . view('pages/materi', $data)
             . view('templates/footer');
     }

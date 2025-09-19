@@ -117,6 +117,24 @@ class Pengajar extends BaseController
 
         return view('templates/header', $data)
             . view('templates/sidebar', $data)
+            . view('pages/jadwal_soal', $data)
+            . view('templates/footer');
+    }
+    
+    public function soalDetail($id_jadwal)
+    {
+        if (session()->get('role') !== 'Pengajar') {
+            return redirect()->to(base_url('login/index'));
+        }
+
+        $data = [
+            'title' => 'Bimbingan Belajar | Daftar Soal',
+            'data_master' => $this->soalModel->getSoalDetail($id_jadwal),
+            'id_jadwal' => $id_jadwal,
+        ];
+
+        return view('templates/header', $data)
+            . view('templates/sidebar', $data)
             . view('pages/soal', $data)
             . view('templates/footer');
     }
@@ -235,6 +253,24 @@ class Pengajar extends BaseController
 
         return view('templates/header', $data)
             . view('templates/sidebar', $data)
+            . view('pages/jadwal_materi', $data)
+            . view('templates/footer');
+    }
+    
+    public function materiDetail($id_jadwal)
+    {
+        if (session()->get('role') !== 'Pengajar') {
+            return redirect()->to(base_url('login/index'));
+        }
+
+        $data = [
+            'title' => 'Bimbingan Belajar | Materi',
+            'data_master' => $this->materiModel->getMateriDetail($id_jadwal),
+            'pelajaran' => $this->jadwalModel->getJadwal(),
+        ];
+
+        return view('templates/header', $data)
+            . view('templates/sidebar', $data)
             . view('pages/materi', $data)
             . view('templates/footer');
     }
@@ -332,14 +368,15 @@ class Pengajar extends BaseController
             . view('templates/footer');
     }
 
-    public function formSoal()
+    public function formSoal($id_jadwal)
     {
         if (session()->get('role') != 'Pengajar') {
             return redirect()->to(base_url('login/index'));
         }
 
         $data = [
-            'title' => 'Bimbingan Belajar'
+            'title' => 'Bimbingan Belajar',
+            'id_jadwal' => $id_jadwal
         ];
 
         return view('templates/header', $data)
@@ -348,12 +385,13 @@ class Pengajar extends BaseController
             . view('templates/footer');
     }
 
-    public function addSoal2()
+    public function addSoal2($id_jadwal)
     {
         $db = \Config\Database::connect();
 
         $data = [
-            'soal' => $this->request->getPost('soal')
+            'soal' => $this->request->getPost('soal'),
+            'id_jadwal' => $id_jadwal
         ];
 
         $this->soalModel->saveSoal($data);
@@ -388,7 +426,7 @@ class Pengajar extends BaseController
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound("Soal dengan ID $id_soal tidak ditemukan");
         }
 
-        // ambil jawaban-jawaban untuk soal ini
+        // ambil jawaban-jawaban untuk soal iniP
         $jawaban = $this->jawabanModel
             ->where('id_soal', $id_soal)
             ->findAll();

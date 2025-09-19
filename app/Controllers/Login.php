@@ -88,6 +88,8 @@ class Login extends BaseController
 
     public function register()
     {
+        $count = $this->ml->checkQuota();
+        if ($count > 100) return redirect()->back()->with('error', 'Kuota pelajar sudah penuh.');
         $data['title'] = "Formulir Pendaftaran/Permohonan Menjadi Anggota";
 
         return view('templates/header_w', $data)

@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Daftar Soal</h1>
+                    <h1 class="m-0">Daftar Materi</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -18,8 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <?php if (session()->get('role') == 'Pengajar') : ?>
-                        <!-- <a class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambah">Tambah Soal</a> -->
-                        <a href="<?= base_url(route_to('pengajar.formSoal', $id_jadwal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah Soal</a>
+                        <!-- <a class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambah">Tambah Materi</a> -->
                         <hr>
                     <?php endif; ?>
                     
@@ -33,22 +32,18 @@
                     <table id="tablePengguna" class="table table-bordered table-striped">
                         <thead>
                             <tr class="table-success">
-                                <th>Judul</th>
-                                <?php if (session()->get('role') == 'Pengajar') : ?>
-                                    <th>Aksi</th>
-                                <?php endif; ?>
+                                <th>Mata Pelajaran</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $role = strtolower(session()->get('role')); ?>
                             <?php foreach ($data_master as $row) : ?>
                                 <tr>
-                                    <td><?= esc($row->soal) ?></td>
-                                    <?php if (session()->get('role') == 'Pengajar') :?> 
+                                    <td><?= esc($row->pelajaran) ?></td>
                                     <td>
-                                            <a href="<?= base_url(route_to('pengajar.formEditSoal', $row->id_soal)) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                                            <a href="javascript:void(0);" data-id="<?= $row->id_soal ?>" class="btn btn-danger btn-sm item-delete"><i class="fa fa-trash"></i> </a>
-                                        </td>
-                                    <?php endif; ?>
+                                        <a href="<?= base_url(route_to($role . '.materiDetail', $row->id_jadwal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -71,13 +66,26 @@
              </div>
               <div class="modal-body">
                       <?php
-                    echo form_open_multipart('pengajar/addSoal');
+                    echo form_open_multipart('pengajar/addMateri');
                     ?>
 
                     <div class="form-group row">
-                        <label for="nama" class="col-sm-2 col-form-label">Judul Soal</label>
+                        <label for="nama" class="col-sm-2 col-form-label">Pelajaran</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="soal" name="soal">
+                            <select class="form-control" name="id_jadwal">
+                                <option value="" selected>-- Pilih Pelajaran --</option>
+                                <?php foreach ($pelajaran as $p) :?>
+                                <option value="<?=$p->id_jadwal?>"><?=$p->pelajaran?></option>
+                                <!-- <option value="Pelajar">Pelajar</option> -->
+                                <!-- <option value="Pengajar">Pengajar</option> -->
+                                <?php endforeach;?>
+                            </select>
+                        </div>
+                    </div>                    
+                    <div class="form-group row">
+                        <label for="nama" class="col-sm-2 col-form-label">Judul</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="judul" name="judul">
                             </small>
                         </div>
                     </div>
@@ -131,7 +139,7 @@
         $('#btdelete').unbind().click(function() {
             $.ajax({
                 type: 'GET',
-                url: '<?= base_url(route_to("pengajar.deleteSoal")) ?>',
+                url: '<?= base_url(route_to("pengajar.deleteMateri")) ?>',
                 data: { id: id },
                 dataType: 'json',
                 success: function(response) {

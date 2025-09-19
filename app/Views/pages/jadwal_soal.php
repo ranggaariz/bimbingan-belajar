@@ -18,8 +18,7 @@
             <div class="card">
                 <div class="card-body">
                     <?php if (session()->get('role') == 'Pengajar') : ?>
-                        <!-- <a class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambah">Tambah Soal</a> -->
-                        <a href="<?= base_url(route_to('pengajar.formSoal', $id_jadwal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> Tambah Soal</a>
+                        <!-- <a class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambah">Tambah Materi</a> -->
                         <hr>
                     <?php endif; ?>
                     
@@ -33,22 +32,18 @@
                     <table id="tablePengguna" class="table table-bordered table-striped">
                         <thead>
                             <tr class="table-success">
-                                <th>Judul</th>
-                                <?php if (session()->get('role') == 'Pengajar') : ?>
-                                    <th>Aksi</th>
-                                <?php endif; ?>
+                                <th>Mata Pelajaran</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $role = strtolower(session()->get('role')); ?>
                             <?php foreach ($data_master as $row) : ?>
                                 <tr>
-                                    <td><?= esc($row->soal) ?></td>
-                                    <?php if (session()->get('role') == 'Pengajar') :?> 
+                                    <td><?= esc($row->pelajaran) ?></td>
                                     <td>
-                                            <a href="<?= base_url(route_to('pengajar.formEditSoal', $row->id_soal)) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i></a>
-                                            <a href="javascript:void(0);" data-id="<?= $row->id_soal ?>" class="btn btn-danger btn-sm item-delete"><i class="fa fa-trash"></i> </a>
-                                        </td>
-                                    <?php endif; ?>
+                                        <a href="<?= base_url(route_to($role . '.soalDetail', $row->id_jadwal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -58,41 +53,6 @@
         </div>
     </section>
 </div>
-
-<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="tambah" class="modal fade">
-     <div class="modal-dialog modal-lg">
-         <div class="modal-content">
-             <div class="modal-header">
-                 <!-- <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button> -->
-                 <h5 class="modal-title" id="LabelModal">Tambah Soal</h5>
-                 <button type="button" class="close" data-dismiss="modal" arial-label="Close">
-                    <span arial-hidden="true">&times;</span>
-                </button>
-             </div>
-              <div class="modal-body">
-                      <?php
-                    echo form_open_multipart('pengajar/addSoal');
-                    ?>
-
-                    <div class="form-group row">
-                        <label for="nama" class="col-sm-2 col-form-label">Judul Soal</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="soal" name="soal">
-                            </small>
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <div class="col-sm-10 offset-md-2">
-                            <button type="submit" class="btn btn-primary">Simpan</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal"> Batal</button>
-                        </div>
-                    </div>
-                    <?php echo form_close(); ?>
-             </div>
-         </div>
-     </div>
- </div>
 
 <!-- Modal dialog delete data-->
 <div class="modal fade" id="myModalDelete" tabindex="-1" aria-labelledby="myModalDeleteLabel" aria-hidden="true">
@@ -131,7 +91,7 @@
         $('#btdelete').unbind().click(function() {
             $.ajax({
                 type: 'GET',
-                url: '<?= base_url(route_to("pengajar.deleteSoal")) ?>',
+                url: '<?= base_url(route_to("pengajar.deleteMateri")) ?>',
                 data: { id: id },
                 dataType: 'json',
                 success: function(response) {

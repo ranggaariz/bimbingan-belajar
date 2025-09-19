@@ -53,6 +53,7 @@ $routes->post('pengajar/editJadwal/(:num)', 'Pengajar::editJadwal/$1', ['as' => 
 $routes->get('pengajar/deleteJadwal', 'Pengajar::deleteJadwal', ['as' => 'pengajar.deleteJadwal']);
 
 $routes->get('pengajar/soal', 'Pengajar::soal');
+$routes->get('pengajar/soalDetail/(:num)', 'Pengajar::soalDetail/$1', ['as' => 'pengajar.soalDetail']);
 $routes->post('pengajar/addSoal', 'Pengajar::addSoal');
 $routes->post('pengajar/editSoal/(:num)', 'Pengajar::editSoal/$1', ['as' => 'pengajar.editSoal']);
 $routes->get('pengajar/deleteSoal', 'Pengajar::deleteSoal', ['as' => 'pengajar.deleteSoal']);
@@ -63,14 +64,15 @@ $routes->post('pengajar/editJawaban/(:num)/(:num)', 'Pengajar::editJawaban/$1/$2
 $routes->get('pengajar/deleteJawaban', 'Pengajar::deleteJawaban', ['as' => 'pengajar.deleteJawaban']);
 
 $routes->get('pengajar/materi', 'Pengajar::materi');
+$routes->get('pengajar/materiDetail/(:num)', 'Pengajar::materiDetail/$1', ['as' => 'pengajar.materiDetail']);
 $routes->post('pengajar/addMateri', 'Pengajar::addMateri');
 $routes->post('pengajar/editMateri/(:num)', 'Pengajar::editMateri/$1', ['as' => 'pengajar.editMateri']);
 $routes->post('pengajar/uploadMateri/(:num)', 'Pengajar::uploadMateri/$1', ['as' => 'pengajar.uploadMateri']);
 $routes->get('pengajar/deleteMateri', 'Pengajar::deleteMateri', ['as' => 'pengajar.deleteMateri']);
 $routes->get('pengajar/tryout', 'Pengajar::tryout');
-$routes->get('pengajar/formSoal', 'Pengajar::formSoal', ['as' => 'pengajar.formSoal']);
+$routes->get('pengajar/formSoal/(:num)', 'Pengajar::formSoal/$1', ['as' => 'pengajar.formSoal']);
 $routes->get('pengajar/formEditSoal/(:num)', 'Pengajar::formEditSoal/$1', ['as' => 'pengajar.formEditSoal']);
-$routes->post('pengajar/addSoal2', 'Pengajar::addSoal2');
+$routes->post('pengajar/addSoal2/(:num)', 'Pengajar::addSoal2/$1');
 $routes->post('pengajar/updateSoal/(:num)', 'Pengajar::updateSoal/$1', ['as' => 'pengajar.updateSoal']);
 
 // $routes->get('supervisor', 'Supervisor::index');
@@ -107,6 +109,7 @@ $routes->get('pelajar/start', 'Pelajar::start', ['as' => 'pelajar.start']);
 $routes->post('pelajar/submitTryout', 'Pelajar::submitTryout', ['as' => 'pelajar.submitTryout']);
 
 $routes->get('pelajar/materi', 'Pelajar::materi');
+$routes->get('pelajar/materiDetail/(:num)', 'Pelajar::materiDetail/$1', ['as' => 'pelajar.materiDetail']);
 
 $routes->get('test-email', 'Login::aaa'); //http://localhost/bimbingan-belajar/public/test-email
 

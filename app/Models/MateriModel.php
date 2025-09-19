@@ -43,6 +43,19 @@ class MateriModel extends Model
         return $query->getResult(); // bisa pakai getResultArray() jika mau array asosiatif
     }
 
+    public function getMateriDetail(int $id): ?array
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('materi');
+
+        $builder->select('materi.*, jadwal.pelajaran');
+        $builder->join('jadwal', 'jadwal.id_jadwal = materi.id_jadwal');
+        $builder->where('materi.id_jadwal', $id);
+
+        $query = $builder->get();
+        return $query->getResult(); // bisa pakai getResultArray() jika mau array asosiatif
+    }
+
     public function getSoalSingle(int $id): ?array
     {
         return $this->where('id_soal', $id)->first();

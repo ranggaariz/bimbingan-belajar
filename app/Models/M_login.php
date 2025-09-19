@@ -27,6 +27,13 @@ class M_login extends Model
 
         return false;
     }
+    
+    public function checkQuota()
+    {
+        $count = $this->where('role', 'pelajar')->countAllResults();
+
+        return $count;
+    }
 
     /**
      * Aturan validasi untuk pendaftaran user

@@ -88,7 +88,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url(strtolower(session()->get('role'))) ?>/tryout" class="nav-link">
+                    <a href="<?= base_url(strtolower(session()->get('role'))) ?>/pretryout" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Try Out

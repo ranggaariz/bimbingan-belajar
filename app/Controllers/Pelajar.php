@@ -62,7 +62,7 @@ class Pelajar extends BaseController
             . view('templates/footer');
     }
     
-    public function tryout()
+    public function pretryout()
     {
         if (session()->get('role') !== 'Pelajar') {
             return redirect()->to(base_url('login/index'));
@@ -70,7 +70,27 @@ class Pelajar extends BaseController
 
         $data = [
             'title' => 'Bimbingan Belajar | Try Out',
-            'data_master' => $this->nilaiModel->getNilaiPerUser(session()->get('id_user')),
+            'data_master' => $this->jadwalModel->getJadwal(),
+            // 'data_master' => $this->nilaiModel->getNilaiPerUser(session()->get('id_user')),
+        ];
+        // var_dump($data);die();
+
+        return view('templates/header', $data)
+            . view('templates/sidebar', $data)
+            . view('pages/pretryout', $data)
+            . view('templates/footer');
+    }
+    
+    public function tryout($id_jadwal)
+    {
+        if (session()->get('role') !== 'Pelajar') {
+            return redirect()->to(base_url('login/index'));
+        }
+
+        $data = [
+            'title' => 'Bimbingan Belajar | Try Out',
+            'data_master' => $this->nilaiModel->getNilaiPerUser(session()->get('id_user'), $id_jadwal),
+            'id_jadwal' => $id_jadwal,
         ];
         // var_dump($data);die();
 
@@ -80,12 +100,18 @@ class Pelajar extends BaseController
             . view('templates/footer');
     }
     
-    public function start()
+    public function start($id_jadwal)
     {
         if (session()->get('role') !== 'Pelajar') {
             return redirect()->to(base_url('login/index'));
         }
-        $tmp = $this->soalModel->getSoal();
+
+        $count = $this->nilaiModel->checkCount(session()->get('id_user'), $id_jadwal);
+        if ($count > 1) {
+            session()->setFlashdata('message', '<div class="alert alert-warning">Anda sudah melebihi batas tryout.</div>');
+            return redirect()->to(base_url('pelajar/tryout/' . $id_jadwal));
+        } 
+        $tmp = $this->soalModel->getSoalDetail($id_jadwal);
         foreach ($tmp as $row) {
             $row->details = $this->jawabanModel->getJawaban($row->id_soal);
         }
@@ -93,6 +119,7 @@ class Pelajar extends BaseController
         $data = [
             'title' => 'Bimbingan Belajar | Try Out',
             'data_master' => $tmp,
+            'id_jadwal' => $id_jadwal,
         ];
         // var_dump($data);die();
 
@@ -102,9 +129,9 @@ class Pelajar extends BaseController
             . view('templates/footer');
     }
 
-    public function submitTryout()
+    public function submitTryout($id_jadwal)
     {
-        $soal = $this->soalModel->getSoal();
+        $soal = $this->soalModel->getSoalDetail($id_jadwal);
         $benar = 0;
         $salah = 0;
         foreach ($soal as $s) {
@@ -121,13 +148,14 @@ class Pelajar extends BaseController
             "salah" => $salah,
             "jumlah_soal" => $jumlah_soal,
             "nilai" => $nilai,
+            "id_jadwal" => $id_jadwal,
             "tanggal" => date("Y-m-d")
         ];
 
         $this->nilaiModel->saveNilai($data);
 
         session()->setFlashdata('message', '<div class="alert alert-success">Add data successfully.</div>');
-        return redirect()->to(base_url('pelajar/tryout'));
+        return redirect()->to(base_url('pelajar/tryout/' . $id_jadwal));
     }
     
     public function materi()

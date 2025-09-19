@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Data Hasil Try Out</h1>
+                    <h1 class="m-0">Tryout</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -17,11 +17,6 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
-                    <?php if (session()->get('role') == 'Pelajar') : ?>
-                        <!-- <a class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambah">Tambah Soal</a> -->
-                        <a href="<?= base_url(route_to('pelajar.start', $id_jadwal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-pause"></i> Mulai Try Out</a>
-                        <hr>
-                    <?php endif; ?>
                     
                     <div mb-2>
                         <!-- Display flash data (message when data is successfully saved) -->
@@ -33,17 +28,17 @@
                     <table id="tablePengguna" class="table table-bordered table-striped">
                         <thead>
                             <tr class="table-success">
-                                <th>Tanggal</th>
-                                <th>Nama Pelajar</th>
-                                <th>Nilai</th>
+                                <th>Mata Pelajaran</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($data_master as $row) : ?>
                                 <tr>
-                                    <td><?= esc($row->tanggal) ?></td>
-                                    <td><?= esc($row->nama) ?></td>
-                                    <td><?= esc($row->nilai) ?></td>
+                                    <td><?= esc($row->pelajaran) ?></td>
+                                    <td>
+                                        <a href="<?= base_url(route_to('pelajar.tryout', $row->id_jadwal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -91,7 +86,7 @@
         $('#btdelete').unbind().click(function() {
             $.ajax({
                 type: 'GET',
-                url: '<?= base_url(route_to("pengajar.deleteSoal")) ?>',
+                url: '<?= base_url(route_to("pengajar.deleteMateri")) ?>',
                 data: { id: id },
                 dataType: 'json',
                 success: function(response) {

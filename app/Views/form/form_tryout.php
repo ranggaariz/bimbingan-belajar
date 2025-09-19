@@ -9,12 +9,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <?php
-                    //create form
-                    echo form_open_multipart('pelajar/submitTryout');
-                    // $attributes = array('id' => 'FrmAddMahasiswa', 'method' => "post", "autocomplete" => "off");
-                    // echo form_open('', $attributes);
-                    ?>
+                    <?= form_open('pelajar/submitTryout/' . $id_jadwal); ?>
 
                     <?php foreach ($data_master as $key) :?>
 

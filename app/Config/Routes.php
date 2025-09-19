@@ -104,9 +104,10 @@ $routes->get('pelajar', 'Pelajar::index');
 $routes->get('pelajar/index', 'Pelajar::index');
 $routes->get('pelajar/jadwal', 'Pelajar::jadwal');
 
-$routes->get('pelajar/tryout', 'Pelajar::tryout');
-$routes->get('pelajar/start', 'Pelajar::start', ['as' => 'pelajar.start']);
-$routes->post('pelajar/submitTryout', 'Pelajar::submitTryout', ['as' => 'pelajar.submitTryout']);
+$routes->get('pelajar/pretryout', 'Pelajar::pretryout');
+$routes->get('pelajar/tryout/(:num)', 'Pelajar::tryout/$1', ['as' => 'pelajar.tryout']);
+$routes->get('pelajar/start/(:num)', 'Pelajar::start/$1', ['as' => 'pelajar.start']);
+$routes->post('pelajar/submitTryout/(:num)', 'Pelajar::submitTryout/$1', ['as' => 'pelajar.submitTryout']);
 
 $routes->get('pelajar/materi', 'Pelajar::materi');
 $routes->get('pelajar/materiDetail/(:num)', 'Pelajar::materiDetail/$1', ['as' => 'pelajar.materiDetail']);

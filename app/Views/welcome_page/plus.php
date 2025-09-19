@@ -29,8 +29,8 @@
 
             <!-- Tombol Back -->
             <div class="text-start">
-                <a href="javascript:history.back()" class="btn btn-light">
-                    <i class="bi bi-arrow-left"></i> Kembali
+                <a href="javascript:history.back()" class="btn btn-primary">
+                    <i class="bi bi-arrow-left" style="color: #e9e9e9ff;"></i> Kembali
                 </a>
             </div>
 
@@ -42,10 +42,18 @@
                     </div>
                 </div> -->
                 <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('<?= base_url('asset/upload/img1.jpg') ?>')"></div>
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('<?= base_url('asset/upload/yoyo.png') ?>')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
                         <h2>PAKET PLUS</h2>
-                        <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquam alias et velit iusto in repellendus? Vel, dignissimos. Sequi, suscipit. Tempore ipsum excepturi delectus consequatur a numquam suscipit, earum quod.</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">Dengan Paket Plus, kamu akan mendapatkan :</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Tambahan sesi privat untuk materi sulit, siswa bisa mendapatkan perhatian khusus dari tutor untuk membahas materi yang dianggap sulit hingga benar-benar paham”</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Akses materi eksklusif (modul + bank soal), disediakan modul pembelajaran yang lengkap dan kumpulan soal terbaru sebagai bahan latihan intensif”</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Try Out rutin & evaluasi hasil belajar, dengan try out berkala siswa bisa mengetahui perkembangan belajar sekaligus mendapatkan analisis hasil secara detail”</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Gratis sesi motivasi & tips belajar efektif, siswa akan dibekali strategi belajar cerdas dan motivasi agar tetap semangat serta disiplin dalam belajar”</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Tambahan persiapan ujian khusus seperti Bahasa Inggris Intensif, ada tambahan kelas intensif untuk menghadapi ujian penting, termasuk latihan mendalam untuk pelajaran Bahasa Inggris”</p>
+
+                        <p><h5>“Ayo Daftar sekarang!! belajar jadi lebih mudah dan menyenangkan”</h5></p>
+                        </p>
                     </div>
                 </div>
                 <!-- <div class="row g-0">

@@ -62,7 +62,7 @@
                             </div>
                             <h5 class="fw-bold">PAKET REGULER</h5>
                             <p class="text-muted mt-2">
-                                Tingkat SMP/SMA/SMK mencakup materi persiapan ujian sekolah umum.
+                                Tingkat SMP/SMA mencakup materi persiapan ujian sekolah umum.
                             </p>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                             </div>
                             <h5 class="fw-bold">PAKET PLUS</h5>
                             <p class="text-muted mt-2">
-                                Materi umum + persiapan ujian khusus & kurikulum bahasa Inggris intensif.
+                                Tingkat SMP/SMA mencakup materi umum + persiapan ujian khusus seperti Bahasa Inggris dan kurikulum intensif.
                             </p>
                         </div>
                     </div>

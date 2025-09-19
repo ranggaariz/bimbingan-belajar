@@ -29,7 +29,7 @@
 
             <!-- Tombol Back -->
             <div class="text-start">
-                <a href="javascript:history.back()" class="btn btn-light">
+                <a href="javascript:history.back()" class="btn btn-primary">
                     <i class="bi bi-arrow-left"></i> Kembali
                 </a>
             </div>
@@ -42,10 +42,15 @@
                     </div>
                 </div> -->
                 <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('<?= base_url('asset/upload/img1.jpg') ?>')"></div>
+                    <div class="col-lg-5 text-white showcase-img" style="background-image: url('<?= base_url('asset/upload/online2.png') ?>')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2>PAKET Online</h2>
-                        <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquam alias et velit iusto in repellendus? Vel, dignissimos. Sequi, suscipit. Tempore ipsum excepturi delectus consequatur a numquam suscipit, earum quod.</p>
+                        <h2>BIMBINGAN ONLINE</h2>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">Bimbingan belajar online adalah layanan pembelajaran jarak jauh yang dilakukan melalui internet, di mana siswa dapat belajar dengan tutor berpengalaman tanpa harus datang ke tempat les. Proses belajar dilakukan secara fleksibel menggunakan aplikasi, serta dilengkapi dengan materi digital, latihan soal, dan rekaman kelas untuk dipelajari kembali.</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">Dengan metode ini, siswa bisa:</p>
+                        <p class="lead mb-0" style="color: #000000ff;">1. Belajar kapan saja dan di mana saja sesuai jadwal</p>
+                        <p class="lead mb-0" style="color: #000000ff;">2. Mengakses modul, bank soal, dan video pembelajaran secara praktis</p>
+                        <p class="lead mb-0" style="color: #000000ff;">3. Lebih fokus karena bisa mengikuti kelas privat maupun kelompok kecil</p>
+                        <p class="lead mb-0" style="color: #000000ff;">4. Efektif mendukung siswa dalam memahami materi, mempersiapkan ujian, dan meningkatkan prestasi belajar.</p>
                     </div>
                 </div>
                 <!-- <div class="row g-0">

@@ -108,9 +108,9 @@
                             </div>
 
                         <div class="from-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Upload Bukti Bayar</label>
+                            <label for="name" class="col-sm-2 col-form-label">Upload Bukti Bayar, Silahkan Bayar Dengan Norek Yang Tertera</label>
                             <div class="col-sm-10">
-                            <label for="userfile" class="col-sm-10 col-form-label">Upload File</label>
+                            <label for="userfile" class="col-sm-10 col-form-label">Upload File (Norek BNI 1347528166 A.N Admin Bimbel)</label>
                             <input type="file" name="userfile" class="form-control">
                             <?php if (isset($validation) && $validation->getError('userfile')): ?>
                                  <div class="text-danger"><?= $validation->getError('userfile') ?></div>

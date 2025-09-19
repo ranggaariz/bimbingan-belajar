@@ -29,8 +29,8 @@
 
             <!-- Tombol Back -->
             <div class="text-start">
-                <a href="javascript:history.back()" class="btn btn-light">
-                    <i class="bi bi-arrow-left"></i> Kembali
+                <a href="javascript:history.back()" class="btn btn-primary" >
+                    <i class="bi bi-arrow-left" style="color: #e9e9e9ff;"></i> Kembali
                 </a>
             </div>
 
@@ -42,10 +42,18 @@
                     </div>
                 </div> -->
                 <div class="row g-0">
-                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('<?= base_url('asset/upload/img1.jpg') ?>')"></div>
+                    <div class="col-lg-6 text-white showcase-img" style="background-image: url('<?= base_url('asset/upload/reguler2.png') ?>')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
                         <h2>PAKET REGULER</h2>
-                        <p class="lead mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aliquam alias et velit iusto in repellendus? Vel, dignissimos. Sequi, suscipit. Tempore ipsum excepturi delectus consequatur a numquam suscipit, earum quod.</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">Belajar lebih terarah, sukses raih prestasi!
+                        <p class="lead mb-0" style="color: #0a52a3ff;">Deskripsi : 
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Paket reguler hadir untuk mendampingi siswa dengan jadwal belajar yang konsisten, materi yang mudah dipahami, serta bimbingan dari tutor berpengalaman”</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Dengan program reguler, siswa akan mendapatkan pembelajaran step by step, latihan soal, serta evaluasi rutin untuk memastikan pemahaman semakin kuat”</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Belajar bukan hanya soal menghafal, tetapi memahami. Program reguler membantu siswa lebih percaya diri menghadapi ujian maupun tugas sekolah”</p>
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Paket bimbingan reguler dirancang agar siswa terbiasa belajar secara disiplin, teratur, dan lebih siap meraih prestasi”</p> 
+                        <p class="lead mb-0" style="color: #0a52a3ff;">“Konsistensi adalah kunci. Program reguler memberikan pendampingan rutin yang membuat belajar lebih menyenangkan dan hasil lebih optimal”</p>
+                        </p>
+                        <p><h5>“Ayo Daftar sekarang!! belajar jadi lebih mudah dan menyenangkan.”</h5></p>
                     </div>
                 </div>
                 <!-- <div class="row g-0">

@@ -168,7 +168,7 @@ class Login extends BaseController
         $config = new \Config\Email();
         $email->initialize($config);
 
-        $email->setFrom('israwinda05@gmail.com', 'Admin Bimbel');
+        $email->setFrom('israwinda68@gmail.com', 'Admin Bimbel');
         $email->setTo('pblkusukses100persen@gmail.com'); // ganti email penerima
 
         $email->setSubject('Test Kirim Email dari Localhost');

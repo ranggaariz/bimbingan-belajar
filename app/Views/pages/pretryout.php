@@ -33,11 +33,12 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $role = strtolower(session()->get('role')); ?>
                             <?php foreach ($data_master as $row) : ?>
                                 <tr>
                                     <td><?= esc($row->pelajaran) ?></td>
                                     <td>
-                                        <a href="<?= base_url(route_to('pelajar.tryout', $row->id_jadwal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
+                                        <a href="<?= base_url(route_to($role . '.tryout', $row->id_jadwal)) ?>" class="btn btn-primary btn-sm"><i class="fa fa-eye"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

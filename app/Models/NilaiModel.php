@@ -32,13 +32,14 @@ class NilaiModel extends Model
         return $this->delete($id);
     }
 
-    public function getNilai()
+    public function getNilai(int $id): array
     {
         $db = \Config\Database::connect();
         $builder = $db->table('nilai');
 
         $builder->select('nilai.*, tbl_user.nama');
         $builder->join('tbl_user', 'tbl_user.id_user = nilai.id_user');
+        $builder->where('nilai.id_jadwal', $id);
 
         $query = $builder->get();
         return $query->getResult(); // bisa pakai getResultArray() jika mau array asosiatif

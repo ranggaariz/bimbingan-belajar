@@ -69,6 +69,8 @@ $routes->post('pengajar/addMateri', 'Pengajar::addMateri');
 $routes->post('pengajar/editMateri/(:num)', 'Pengajar::editMateri/$1', ['as' => 'pengajar.editMateri']);
 $routes->post('pengajar/uploadMateri/(:num)', 'Pengajar::uploadMateri/$1', ['as' => 'pengajar.uploadMateri']);
 $routes->get('pengajar/deleteMateri', 'Pengajar::deleteMateri', ['as' => 'pengajar.deleteMateri']);
+$routes->get('pengajar/pretryout', 'Pengajar::pretryout');
+$routes->get('pengajar/tryout/(:num)', 'Pengajar::tryout/$1', ['as' => 'pengajar.tryout']);
 $routes->get('pengajar/tryout', 'Pengajar::tryout');
 $routes->get('pengajar/formSoal/(:num)', 'Pengajar::formSoal/$1', ['as' => 'pengajar.formSoal']);
 $routes->get('pengajar/formEditSoal/(:num)', 'Pengajar::formEditSoal/$1', ['as' => 'pengajar.formEditSoal']);

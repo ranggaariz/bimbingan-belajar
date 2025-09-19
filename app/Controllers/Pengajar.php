@@ -351,7 +351,26 @@ class Pengajar extends BaseController
         return $this->response->setJSON(['success' => true]);
     }
     
-    public function tryout()
+    public function pretryout()
+    {
+        if (session()->get('role') !== 'Pengajar') {
+            return redirect()->to(base_url('login/index'));
+        }
+
+        $data = [
+            'title' => 'Bimbingan Belajar | Try Out',
+            'data_master' => $this->jadwalModel->getJadwal(),
+            // 'data_master' => $this->nilaiModel->getNilaiPerUser(session()->get('id_user')),
+        ];
+        // var_dump($data);die();
+
+        return view('templates/header', $data)
+            . view('templates/sidebar', $data)
+            . view('pages/pretryout', $data)
+            . view('templates/footer');
+    }
+    
+    public function tryout($id_jadwal)
     {
         if (session()->get('role') !== 'Pengajar') {
             return redirect()->to(base_url('login/index'));
@@ -359,7 +378,7 @@ class Pengajar extends BaseController
 
         $data = [
             'title' => 'Bimbingan Belajar | Hasil Try Out',
-            'data_master' => $this->nilaiModel->getNilai(),
+            'data_master' => $this->nilaiModel->getNilai($id_jadwal),
         ];
 
         return view('templates/header', $data)

@@ -112,7 +112,8 @@ class Pengajar extends BaseController
 
         $data = [
             'title' => 'Bimbingan Belajar | Daftar Soal',
-            'data_master' => $this->soalModel->getSoal(),
+            'data_master' => $this->jadwalModel->getJadwal(),
+            // 'data_master' => $this->soalModel->getSoal(),
         ];
 
         return view('templates/header', $data)
@@ -247,7 +248,8 @@ class Pengajar extends BaseController
 
         $data = [
             'title' => 'Bimbingan Belajar | Materi',
-            'data_master' => $this->materiModel->getMateri(),
+            // 'data_master' => $this->materiModel->getMateri(),
+            'data_master' => $this->jadwalModel->getJadwal(),
             'pelajaran' => $this->jadwalModel->getJadwal(),
         ];
 

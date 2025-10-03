@@ -166,7 +166,8 @@ class Pelajar extends BaseController
 
         $data = [
             'title' => 'Bimbingan Belajar | Materi',
-            'data_master' => $this->materiModel->getMateri(),
+            // 'data_master' => $this->materiModel->getMateri(),
+            'data_master' => $this->jadwalModel->getJadwal(),
             'pelajaran' => $this->jadwalModel->getJadwal(),
         ];
 

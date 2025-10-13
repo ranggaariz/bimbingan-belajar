@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 
-require_once APPPATH . 'Libraries/PhpSpreadsheet/Spreadsheet.php';
-require_once APPPATH . 'Libraries/PhpSpreadsheet/Writer/Xlsx.php';
-
 use App\Models\AdminModel;
 use App\Models\JadwalModel;
 use CodeIgniter\Controller;

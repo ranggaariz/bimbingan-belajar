@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <div class="card">
                 <div class="card-body">
-                    <?php if (session()->get('role') == 'Pengajar') : ?>
+                    <?php if (session()->get('role') == 'Admin') : ?>
                         <a class="btn btn-primary mb-2" data-toggle="modal" data-target="#tambah">Tambah Jadwal</a>
                         <hr>
                     <?php endif; ?>

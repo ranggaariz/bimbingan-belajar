@@ -3,7 +3,10 @@
 namespace App\Controllers;
 
 use App\Models\AdminModel;
+use App\Models\JadwalModel;
 use CodeIgniter\Controller;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class Admin extends BaseController
 {
@@ -11,10 +14,12 @@ class Admin extends BaseController
     protected $cutiModel;
     protected $timeslipModel;
     protected $seragamModel;
+    protected $jadwalModel;
 
     public function __construct()
     {
         $this->adminModel = new AdminModel();
+        $this->jadwalModel = new JadwalModel();
         helper('form'); 
     }
 
@@ -225,5 +230,74 @@ class Admin extends BaseController
             . view('templates/sidebar', $data)
             . view('pages/anggota', $data)
             . view('templates/footer');
+    }
+    
+    public function jadwal()
+    {
+        if (session()->get('role') !== 'Admin') {
+            return redirect()->to(base_url('login/index'));
+        }
+
+        $data = [
+            'title' => 'Bimbingan Belajar | Jadwal Pelajaran',
+            'data_master' => $this->jadwalModel->getJadwal(),
+        ];
+
+        return view('templates/header', $data)
+            . view('templates/sidebar', $data)
+            . view('pages/jadwal', $data)
+            . view('templates/footer');
+    }
+
+    public function addJadwal()
+    {
+        $data = [
+            'hari' => $this->request->getPost('hari'),
+            'pelajaran' => $this->request->getPost('pelajaran')
+        ];
+
+        $this->jadwalModel->saveJadwal($data);
+
+        session()->setFlashdata('message', '<div class="alert alert-success">Add data successfully.</div>');
+        return redirect()->to(base_url('admin/jadwal'));
+    }
+
+    public function export()
+    {
+        // 1️⃣ Buat objek Spreadsheet
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $data = $this->adminModel->getExport();
+
+        // tulis header kolom (ambil dari key object)
+        $headers = array_keys(get_object_vars($data[0]));
+        $col = 'A';
+        foreach ($headers as $header) {
+            $sheet->setCellValue($col . '1', ucfirst(str_replace('_', ' ', $header)));
+            $col++;
+        }
+
+        // isi data baris per baris
+        $row = 2;
+        foreach ($data as $user) {
+            $col = 'A';
+            foreach ($headers as $field) {
+                $sheet->setCellValue($col . $row, $user->$field);
+                $col++;
+            }
+            $row++;
+        }
+
+        // download hasilnya
+        $writer = new Xlsx($spreadsheet);
+        $filename = 'Data_User_' . date('Ymd_His') . '.xlsx';
+
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header("Content-Disposition: attachment;filename=\"$filename\"");
+        header('Cache-Control: max-age=0');
+
+        $writer->save('php://output');
+        exit;
     }
 }

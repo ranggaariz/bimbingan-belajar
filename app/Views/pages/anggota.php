@@ -18,6 +18,8 @@
             <div class="card">
                 <div class="card-body">
                     
+                    <a href="<?= base_url(route_to('admin.export')) ?>" class="btn btn-success btn-sm"><i class="fa fa-download"></i> Export To Excel</a>
+                    <hr>
                     <div mb-2>
                         <!-- Display flash data (message when data is successfully saved) -->
                         <?php if (session()->getFlashdata('message')) : ?>
@@ -34,6 +36,7 @@
                                 <th>Jenis Kelamin</th>
                                 <th>Alamat</th>
                                 <th>No. HP</th>
+                                <th>Bukti Bayar</th>
                                 <?php if (session()->get('role') == 'Admin') : ?>
                                     <th>Aksi</th>
                                 <?php endif; ?>
@@ -48,6 +51,11 @@
                                     <td><?= esc($row->jenis_kelamin) ?></td>
                                     <td><?= esc($row->alamat) ?></td>
                                     <td><?= esc($row->no_hp) ?></td>
+                                    <td>
+                                        <?php if ($row->userfile != null && $row->userfile != "") :?>
+                                            <a href="<?=base_url()?>/asset/upload/<?= $row->userfile ?>">File</a>
+                                        <?php endif;?>
+                                    </td>
                                     <?php if (session()->get('role') == 'Admin') :?> 
                                     <td>
                                         <a href="javascript:void(0);" data-id="<?= $row->id_user ?>" class="btn btn-danger btn-sm item-delete"><i class="fa fa-trash"></i></a>

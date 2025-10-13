@@ -56,7 +56,6 @@
                 </li>
                 <?php endif; ?>
 
-                <?php if(session()->get('role') != 'Admin'): ?>
                 <li class="nav-item">
                     <a href="<?= base_url(strtolower(session()->get('role'))) ?>/jadwal" class="nav-link">
                         <i class="nav-icon fas fa-calendar"></i>
@@ -65,7 +64,6 @@
                         </p>
                     </a>
                 </li>
-                <?php endif; ?>
 
                 <?php if(session()->get('role') == 'Pengajar'): ?>
                 <li class="nav-item">

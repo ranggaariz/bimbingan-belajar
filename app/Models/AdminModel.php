@@ -102,6 +102,21 @@ class AdminModel extends Model
         return $query->getResult(); // bisa pakai getResultArray() jika mau array asosiatif
     }
 
+    public function getExport()
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('tbl_user');
+
+        $builder->select('nama, umur, alamat, tingkatan, no_hp, jenis_kelamin, email');
+        $builder->where([
+            'role' => 'Pelajar',
+            'is_active' => 1
+        ]);
+
+        $query = $builder->get();
+        return $query->getResult(); // bisa pakai getResultArray() jika mau array asosiatif
+    }
+
     public function countUser()
     {
         $db = \Config\Database::connect();

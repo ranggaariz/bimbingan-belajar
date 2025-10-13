@@ -28,6 +28,10 @@ $routes->get('admin/daftarPelajar', 'Admin::daftarPelajar');
 $routes->get('admin/approveAnggotaAdmin/(:num)', 'Admin::approveAnggotaAdmin/$1', ['as' => 'admin.approveAnggotaAdmin']);
 $routes->get('admin/pelajar', 'Admin::pelajar');
 
+$routes->get('admin/jadwal', 'Admin::jadwal');
+$routes->post('admin/addJadwal', 'Admin::addJadwal');
+$routes->get('admin/export', 'Admin::export', ['as' => 'admin.export']);
+
 // $routes->get('admin/openCuti/(:num)/(:num)', 'Admin::openCuti/$1/$2');
 // $routes->get('admin/approveCuti', 'Admin::approveCuti', ['as' => 'admin.approveCuti']);
 // $routes->get('admin/rejectCuti', 'Admin::rejectCuti', ['as' => 'admin.rejectCuti']);

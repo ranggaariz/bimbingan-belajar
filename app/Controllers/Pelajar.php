@@ -34,9 +34,11 @@ class Pelajar extends BaseController
         if (session()->get('role') != 'Pelajar') {
             return redirect()->to(base_url('login/index'));
         }
+        $totalPelajar = $this->adminModel->countPelajar();
 
         $data = [
             'title' => 'Bimbingan Belajar',
+            'totalPelajar' => $totalPelajar,
         ];
 
         return view('templates/header', $data)

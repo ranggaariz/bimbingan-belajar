@@ -57,6 +57,21 @@
           </div>
           <!-- ./col -->
           <?php endif ?>
+        <?php if (session()->get('role') == 'Pelajar'): ?>
+          <div class="col-lg-12 col-6">
+            <!-- small box -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3><?=$totalPelajar?></h3>
+                <p>Total Pelajar</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-stream"></i>
+              </div>
+            </div>
+          </div>
+          <!-- ./col -->
+          <?php endif ?>
         </div>
 
         <div class="row">

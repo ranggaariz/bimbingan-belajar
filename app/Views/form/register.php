@@ -129,7 +129,7 @@
         <div class="form-group row justify-content-center">
             <div class="col-sm-12 text-center">
                 <button type="submit" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal"> Batal</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="history.back()"> Batal</button>
             </div>
         </div>
 

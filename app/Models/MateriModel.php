@@ -43,6 +43,7 @@ class MateriModel extends Model
         return $query->getResult(); // bisa pakai getResultArray() jika mau array asosiatif
     }
 
+
     public function getMateriDetail(int $id): ?array
     {
         $db = \Config\Database::connect();

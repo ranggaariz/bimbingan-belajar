@@ -148,7 +148,7 @@
          <div class="modal-content">
              <div class="modal-header">
                  <!-- <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button> -->
-                 <h5 class="modal-title" id="LabelModal">Tambah Soal</h5>
+                 <h5 class="modal-title" id="LabelModal">Tambah Materi</h5>
                  <button type="button" class="close" data-dismiss="modal" arial-label="Close">
                     <span arial-hidden="true">&times;</span>
                 </button>

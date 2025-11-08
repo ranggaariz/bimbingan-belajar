@@ -153,32 +153,5 @@ class AdminModel extends Model
         return $builder->countAllResults();
     }
 
-    /**
-     * Hitung total cuti
-     * @return int
-     */
-    public function countprofile(): int
-    {
-        return $this->db->table('tbl_user')->countAllResults();
-    }
-    
-    public function countcuti(): int
-    {
-        return $this->db->table('tbl_cuti')->countAllResults();
-    }
-    
-    public function counttimeslip(): int
-    {
-        return $this->db->table('tbl_timeslip')->countAllResults();
-    }
-    
-    public function countseragam(): int
-    {
-        return $this->db->table('tbl_seragam')->countAllResults();
-    }
 
-    public function updateSisaCuti(int $id_user, $sisa_cuti): bool
-    {
-        return $this->update($id_user, ['sisa_cuti' => $sisa_cuti]);
-    }
 }

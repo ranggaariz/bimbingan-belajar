@@ -62,7 +62,7 @@
                             </div>
                             <h5 class="fw-bold">PAKET REGULER</h5>
                             <p class="text-muted mt-2">
-                                Tingkat SMP/SMA mencakup materi persiapan ujian sekolah umum.
+                                Tingkat SD/SMP/SMA mencakup materi persiapan ujian sekolah umum.
                             </p>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                             </div>
                             <h5 class="fw-bold">PAKET PLUS</h5>
                             <p class="text-muted mt-2">
-                                Tingkat SMP/SMA mencakup materi umum + persiapan ujian khusus seperti Bahasa Inggris dan kurikulum intensif.
+                                Tingkat SD/SMP/SMA mencakup materi umum + persiapan ujian khusus seperti Bahasa Inggris dan kurikulum intensif.
                             </p>
                         </div>
                     </div>
@@ -113,29 +113,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
-                        </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2025. All Rights Reserved.</p>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                        <ul class="list-inline mb-0">
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

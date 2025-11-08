@@ -100,6 +100,7 @@
                                     <option value="" <?= old('tingkatan') == '' ? 'selected' : '' ?>>-- Pilih --</option>
                                     <option value="SMA" <?= old('tingkatan') == 'SMA' ? 'selected' : '' ?>>SMA</option>
                                     <option value="SMP" <?= old('tingkatan') == 'SMP' ? 'selected' : '' ?>>SMP</option>
+                                    <option value="SD"  <?= old('tingkatan') == 'SD' ? 'selected' : '' ?>>SD</option>
                                 </select>
                                 <?php if (isset($validation) && $validation->getError('jenis_kelamin')): ?>
                                     <div class="text-danger"><?= $validation->getError('jenis_kelamin') ?></div>
@@ -132,7 +133,6 @@
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="history.back()"> Batal</button>
             </div>
         </div>
-
-        <?= form_close(); ?>
+        <?php echo form_close(); ?>
     </div>
 </div>

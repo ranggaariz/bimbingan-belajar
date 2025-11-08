@@ -150,18 +150,6 @@ class Login extends BaseController
                 . view('edit/forgot', $data);
         }
 
-        $user = $this->ml->cek_user();
-
-        if (!$user) {
-            session()->setFlashdata('password', '<div class="alert alert-danger">NIP anda tidak terdaftar.</div>');
-            $data['title'] = "Lupa Password";
-            return view('templates/header_w', $data)
-                . view('edit/forgot', $data);
-        }
-
-        $this->ml->updatePass();
-        session()->setFlashdata('password', '<div class="alert alert-success">Password berhasil diupdate.</div>');
-        return redirect()->to('/login');
     }
 
     public function aaa()

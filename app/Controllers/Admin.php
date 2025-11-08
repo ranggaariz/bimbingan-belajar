@@ -11,9 +11,6 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 class Admin extends BaseController
 {
     protected $adminModel;
-    protected $cutiModel;
-    protected $timeslipModel;
-    protected $seragamModel;
     protected $jadwalModel;
 
     public function __construct()

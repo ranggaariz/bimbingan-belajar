@@ -13,7 +13,7 @@ class NilaiModel extends Model
     ]; // Kolom yang diizinkan untuk operasi CRUD
 
     /**
-     * Simpan data cuti baru
+     * Simpan data 
      * @param array $data
      * @return bool
      */
@@ -71,78 +71,4 @@ class NilaiModel extends Model
         return $this->where('id_soal', $id)->first();
     }
 
-    /**
-     * Ambil semua data cuti dengan relasi ke user
-     * @return array
-     */
-    public function getCuti(): array
-    {
-        return $this->select('tbl_cuti.*, tbl_user.name as user_name, tbl_user.email as user_email')
-            ->join('tbl_user', 'tbl_user.id_user = tbl_cuti.id_user')
-            ->orderBy('tbl_cuti.id_cuti','DESC')
-            ->findAll();
-    }
-
-    /**
-     * Ambil detail cuti berdasarkan ID dengan relasi ke user
-     * @param int $id_cuti
-     * @return array|null
-     */
-    public function getCutiDetail(int $id_cuti): ?array
-    {
-        return $this->select('tbl_cuti.*, tbl_user.name as user_name, tbl_user.email as user_email')
-            ->join('tbl_user', 'tbl_user.id_user = tbl_cuti.id_user')
-            ->where('tbl_cuti.id_cuti', $id_cuti)
-            ->first();
-    }
-
-    /**
-     * Hapus cuti berdasarkan ID
-     * @param int $id
-     * @return bool
-     */
-    public function deleteCuti(int $id): bool
-    {
-        return $this->delete($id);
-    }
-
-    /**
-     * Approve cuti oleh Supervisor
-     * @param int $id_cuti
-     * @return bool
-     */
-    public function approveCutiSpv(int $id_cuti): bool
-    {
-        return $this->update($id_cuti, ['status' => 'Supervisor']);
-    }
-
-    /**
-     * Approve cuti oleh HRD
-     * @param int $id_cuti
-     * @return bool
-     */
-    public function approveCutiHRD(int $id_cuti): bool
-    {
-        return $this->update($id_cuti, ['status' => 'HRD']);
-    }
-
-    /**
-     * Tolak cuti oleh Supervisor
-     * @param int $id_cuti
-     * @return bool
-     */
-    public function rejectSpv(int $id_cuti, $note): bool
-    {
-        return $this->update($id_cuti, ['status' => 'RejectSpv', 'note' => $note]);
-    }
-
-    /**
-     * Tolak cuti oleh HRD
-     * @param int $id_cuti
-     * @return bool
-     */
-    public function rejectHRD(int $id_cuti): bool
-    {
-        return $this->update($id_cuti, ['status' => 'RejectHRD']);
-    }
 }

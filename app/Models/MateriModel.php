@@ -9,7 +9,7 @@ class MateriModel extends Model
     protected $table = 'materi'; // Nama tabel
     protected $primaryKey = 'id_materi'; // Primary key
     protected $allowedFields = [
-        'judul', 'id_jadwal', 'file'
+        'judul', 'id_jadwal', 'file','tingkatan'
     ]; // Kolom yang diizinkan untuk operasi CRUD
 
     /**
@@ -51,6 +51,21 @@ class MateriModel extends Model
 
         $builder->select('materi.*, jadwal.pelajaran');
         $builder->join('jadwal', 'jadwal.id_jadwal = materi.id_jadwal');
+        $builder->where('materi.id_jadwal', $id);
+
+        $query = $builder->get();
+        return $query->getResult(); // bisa pakai getResultArray() jika mau array asosiatif
+    }
+
+
+    public function getMateriDetailPelajar(int $id): ?array
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('materi');
+
+        $builder->select('materi.*, jadwal.pelajaran');
+        $builder->join('jadwal', 'jadwal.id_jadwal = materi.id_jadwal');
+        $builder->where('materi.tingkatan', session()->get('tingkatan'));
         $builder->where('materi.id_jadwal', $id);
 
         $query = $builder->get();

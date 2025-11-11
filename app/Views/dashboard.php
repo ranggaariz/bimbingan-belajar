@@ -89,7 +89,7 @@
               <div class="card-body">
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
-                  <h1 align="center">Selamat Datang <?= session()->get('nama') ?>!</h1>
+                  <h1 align="center">Selamat Datang <?= session()->get('nama') ?> - <?= session()->get('tingkatan') ?>!</h1>
                   <h3 align="center">Sistem Informasi Bimbingan Belajar (SIBEL)</h3>
                   <h3 class="text-center">
                     <img src="<?= base_url('asset/dist/img/book.jpg') ?>" alt="GenBI" width="40%" class="brand-image" style="opacity: .8"><br>

@@ -20,7 +20,7 @@
                         <div class="form-group row">
                             <label for="name" class="col-sm-2 col-form-label">Name</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="name" name="nama" value="<?= old('nama') ?>">
+                                <input type="text" class="form-control" id="name" name="nama" value="<?= old('nama') ?>" required>
                                 <?php if (isset($validation) && $validation->getError('nama')): ?>
                                     <div class="text-danger"><?= $validation->getError('nama') ?></div>
                                 <?php endif; ?>
@@ -28,7 +28,7 @@
 
                             <label for="username" class="col-sm-2 col-form-label">Username</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="username" name="username" value="<?= old('username') ?>">
+                                <input type="text" class="form-control" id="username" name="username" value="<?= old('username') ?>" required>
                                 <?php if (isset($validation) && $validation->getError('username')): ?>
                                     <div class="text-danger"><?= $validation->getError('username') ?></div>
                                 <?php endif; ?>
@@ -38,7 +38,7 @@
                         <div class="form-group row">
                             <label for="username" class="col-sm-2 col-form-label">Password</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="username" name="password" value="<?= old('password') ?>">
+                                <input type="text" class="form-control" id="username" name="password" value="<?= old('password') ?>" required>
                                 <?php if (isset($validation) && $validation->getError('password')): ?>
                                     <div class="text-danger"><?= $validation->getError('password') ?></div>
                                 <?php endif; ?>
@@ -46,7 +46,7 @@
                             
                             <label for="name" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="name" name="email" value="<?= old('email') ?>">
+                                <input type="text" class="form-control" id="name" name="email" value="<?= old('email') ?>" required>
                                 <?php if (isset($validation) && $validation->getError('email')): ?>
                                     <div class="text-danger"><?= $validation->getError('email') ?></div>
                                 <?php endif; ?>
@@ -56,7 +56,7 @@
                         <div class="form-group row">
                             <label for="username" class="col-sm-2 col-form-label">Alamat</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="username" name="alamat" value="<?= old('alamat') ?>">
+                                <input type="text" class="form-control" id="username" name="alamat" value="<?= old('alamat') ?>" required>
                                 <?php if (isset($validation) && $validation->getError('alamat')): ?>
                                     <div class="text-danger"><?= $validation->getError('alamat') ?></div>
                                 <?php endif; ?>
@@ -64,7 +64,7 @@
                             
                             <label for="name" class="col-sm-2 col-form-label">Umur</label>
                             <div class="col-sm-4">
-                                <input type="number" class="form-control" id="name" name="umur" value="<?= old('umur') ?>">
+                                <input type="number" class="form-control" id="name" name="umur" value="<?= old('umur') ?>" required>
                                 <?php if (isset($validation) && $validation->getError('umur')): ?>
                                     <div class="text-danger"><?= $validation->getError('umur') ?></div>
                                 <?php endif; ?>
@@ -86,7 +86,7 @@
 
                             <label for="username" class="col-sm-2 col-form-label">No. HP</label>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" id="username" name="no_hp" value="<?= old('no_hp') ?>">
+                                <input type="text" class="form-control" id="username" name="no_hp" value="<?= old('no_hp') ?>" required>
                                 <?php if (isset($validation) && $validation->getError('no_hp')): ?>
                                     <div class="text-danger"><?= $validation->getError('no_hp') ?></div>
                                 <?php endif; ?>
@@ -106,7 +106,7 @@
                                     <div class="text-danger"><?= $validation->getError('jenis_kelamin') ?></div>
                                 <?php endif; ?>
                             </div>
-                            </div>
+                        </div>
 
                         <div class="from-group row">
                             <label for="name" class="col-sm-2 col-form-label">Upload Bukti Bayar, Silahkan Bayar Dengan Norek Yang Tertera</label>

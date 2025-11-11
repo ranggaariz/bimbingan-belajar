@@ -15,6 +15,16 @@
                 <h4>Buat Soal</h4><hr>
 
                 <div class="form-group">
+                    <label for="soal">Tingkatan</label>
+                    <select class="form-control" name="tingkatan">
+                        <option value="" <?= old('tingkatan') == '' ? 'selected' : '' ?>>-- Pilih --</option>
+                        <option value="SMA" <?= old('tingkatan') == 'SMA' ? 'selected' : '' ?>>SMA</option>
+                        <option value="SMP" <?= old('tingkatan') == 'SMP' ? 'selected' : '' ?>>SMP</option>
+                        <option value="SD"  <?= old('tingkatan') == 'SD' ? 'selected' : '' ?>>SD</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="soal">Soal</label>
                     <textarea class="form-control" id="soal" name="soal" rows="3" required><?= old('soal') ?></textarea>
                 </div>

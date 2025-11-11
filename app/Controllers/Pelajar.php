@@ -113,7 +113,7 @@ class Pelajar extends BaseController
             session()->setFlashdata('message', '<div class="alert alert-warning">Anda sudah melebihi batas tryout.</div>');
             return redirect()->to(base_url('pelajar/tryout/' . $id_jadwal));
         } 
-        $tmp = $this->soalModel->getSoalDetail($id_jadwal);
+        $tmp = $this->soalModel->getSoalDetailPelajar($id_jadwal);
         foreach ($tmp as $row) {
             $row->details = $this->jawabanModel->getJawaban($row->id_soal);
         }
@@ -187,7 +187,7 @@ class Pelajar extends BaseController
 
         $data = [
             'title' => 'Bimbingan Belajar | Materi',
-            'data_master' => $this->materiModel->getMateriDetail($id_jadwal),
+            'data_master' => $this->materiModel->getMateriDetailPelajar($id_jadwal),
             'pelajaran' => $this->jadwalModel->getJadwal(),
         ];
 

@@ -50,7 +50,7 @@
                                     <option value="" <?= old('role') == '' ? 'selected' : '' ?>>-- Pilih --</option>
                                     <option value="Admin" <?= old('role') == 'Admin' ? 'selected' : '' ?>>Admin</option>
                                     <option value="Pengajar" <?= old('role') == 'Pengajar' ? 'selected' : '' ?>>Pengajar</option>
-                                    <option value="Pelajar" <?= old('role') == 'Pelajar' ? 'selected' : '' ?>>Pelajar</option>
+                                    <!-- <option value="Pelajar" <?= old('role') == 'Pelajar' ? 'selected' : '' ?>>Pelajar</option> -->
                                 </select>
                                 <?php if (isset($validation) && $validation->getError('role')): ?>
                                     <div class="text-danger"><?= $validation->getError('role') ?></div>
@@ -59,7 +59,7 @@
                         </div>
 
                     </div>
-                </div>
+                </div>uniqid
             </div>
         </div>
 

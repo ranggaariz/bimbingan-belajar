@@ -62,6 +62,7 @@ class Login extends BaseController
                 'nama'     => $user->nama,
                 'username' => $user->username,
                 'role'     => $user->role,
+                'tingkatan'     => $user->tingkatan,
             ];
             session()->set($userData);
 
@@ -98,6 +99,25 @@ class Login extends BaseController
 
     public function saveRegister()
     {
+        $validation = \Config\Services::validation();
+
+        $rules = [
+            'nama'          => 'required',
+            'username'      => 'required',
+            'password'      => 'required',
+            'email'         => 'required',
+            'alamat'        => 'required',
+            'umur'          => 'required|integer',
+            'jenis_kelamin' => 'required',
+            'no_hp'         => 'required',
+            'tingkatan'     => 'required'
+            // 'userfile'      => 'uploaded[userfile]|max_size[userfile,2048]|ext_in[userfile,jpg,jpeg,png,pdf]'
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->back()->withInput()->with('validation', $validation);
+        }
+
         $file = $this->request->getFile('userfile');
 
         $newName = null;

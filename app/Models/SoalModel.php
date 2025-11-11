@@ -9,7 +9,7 @@ class SoalModel extends Model
     protected $table = 'soal'; // Nama tabel
     protected $primaryKey = 'id_soal'; // Primary key
     protected $allowedFields = [
-        'soal','id_jadwal'
+        'soal','id_jadwal','tingkatan'
     ]; // Kolom yang diizinkan untuk operasi CRUD
 
     public function saveSoal(array $data): bool
@@ -47,6 +47,20 @@ class SoalModel extends Model
 
         $builder->select('soal.*, jadwal.pelajaran');
         $builder->join('jadwal', 'jadwal.id_jadwal = soal.id_jadwal');
+        $builder->where('soal.id_jadwal', $id);
+
+        $query = $builder->get();
+        return $query->getResult(); // bisa pakai getResultArray() jika mau array asosiatif
+    }
+
+    public function getSoalDetailPelajar(int $id): ?array
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('soal');
+
+        $builder->select('soal.*, jadwal.pelajaran');
+        $builder->join('jadwal', 'jadwal.id_jadwal = soal.id_jadwal');
+        $builder->where('soal.tingkatan', session()->get('tingkatan'));
         $builder->where('soal.id_jadwal', $id);
 
         $query = $builder->get();

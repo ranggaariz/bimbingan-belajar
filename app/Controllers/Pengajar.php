@@ -143,6 +143,7 @@ class Pengajar extends BaseController
     public function addSoal()
     {
         $data = [
+            'tingkatan' => $this->request->getPost('tingkatan'),
             'soal' => $this->request->getPost('soal')
         ];
 
@@ -281,13 +282,14 @@ class Pengajar extends BaseController
     {
         $data = [
             'id_jadwal' => $this->request->getPost('id_jadwal'),
+            'tingkatan' => $this->request->getPost('tingkatan'),
             'judul' => $this->request->getPost('judul')
         ];
 
         $this->materiModel->saveMateri($data);
 
         session()->setFlashdata('message', '<div class="alert alert-success">Add data successfully.</div>');
-        return redirect()->to(base_url('pengajar/materi'));
+        return redirect()->to(base_url('pengajar/materiDetail/' . $this->request->getPost('id_jadwal')));
     }
 
     public function editMateri($id_materi)
@@ -412,6 +414,7 @@ class Pengajar extends BaseController
 
         $data = [
             'soal' => $this->request->getPost('soal'),
+            'tingkatan' => $this->request->getPost('tingkatan'),
             'id_jadwal' => $id_jadwal
         ];
 
@@ -470,11 +473,13 @@ class Pengajar extends BaseController
         $soal = $this->request->getPost('soal');
         $jawaban = $this->request->getPost('jawaban');
         $id_jawaban = $this->request->getPost('id_jawaban');
+        $tingkatan = $this->request->getPost('tingkatan');
         $benar = $this->request->getPost('benar'); // index jawaban yang benar
 
         // update soal
         $this->soalModel->update($id_soal, [
-            'soal' => $soal
+            'soal' => $soal,
+            'tingkatan' => $tingkatan
         ]);
 
         // loop jawaban

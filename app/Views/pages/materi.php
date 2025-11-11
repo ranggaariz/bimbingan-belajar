@@ -34,6 +34,7 @@
                             <tr class="table-success">
                                 <th>Mata Pelajaran</th>
                                 <th>Judul</th>
+                                <th>Tingkatan</th>
                                 <th>File</th>
                                 <?php if (session()->get('role') == 'Pengajar') : ?>
                                     <th>Aksi</th>
@@ -45,6 +46,7 @@
                                 <tr>
                                     <td><?= esc($row->pelajaran) ?></td>
                                     <td><?= esc($row->judul) ?></td>
+                                    <td><?= esc($row->tingkatan) ?></td>
                                     <td>
                                         <?php if ($row->file != null && $row->file != "") :?>
                                             <a href="<?=base_url()?>/asset/upload/<?= $row->file ?>">File</a>
@@ -171,6 +173,17 @@
                             </select>
                         </div>
                     </div>                    
+                    <div class="form-group row">
+                        <label for="nama" class="col-sm-2 col-form-label">Tingkatan</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="tingkatan">
+                                <option value="" <?= old('tingkatan') == '' ? 'selected' : '' ?>>-- Pilih --</option>
+                                <option value="SMA" <?= old('tingkatan') == 'SMA' ? 'selected' : '' ?>>SMA</option>
+                                <option value="SMP" <?= old('tingkatan') == 'SMP' ? 'selected' : '' ?>>SMP</option>
+                                <option value="SD"  <?= old('tingkatan') == 'SD' ? 'selected' : '' ?>>SD</option>
+                            </select>
+                        </div>
+                    </div>                  
                     <div class="form-group row">
                         <label for="nama" class="col-sm-2 col-form-label">Judul</label>
                         <div class="col-sm-10">

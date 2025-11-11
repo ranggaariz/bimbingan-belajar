@@ -33,6 +33,7 @@
                     <table id="tablePengguna" class="table table-bordered table-striped">
                         <thead>
                             <tr class="table-success">
+                                <th>Tingkatan</th>
                                 <th>Judul</th>
                                 <?php if (session()->get('role') == 'Pengajar') : ?>
                                     <th>Aksi</th>
@@ -42,6 +43,7 @@
                         <tbody>
                             <?php foreach ($data_master as $row) : ?>
                                 <tr>
+                                    <td><?= esc($row->tingkatan) ?></td>
                                     <td><?= esc($row->soal) ?></td>
                                     <?php if (session()->get('role') == 'Pengajar') :?> 
                                     <td>
@@ -73,6 +75,15 @@
                       <?php
                     echo form_open_multipart('pengajar/addSoal');
                     ?>
+
+                    <div class="form-group row">
+                        <select class="form-control" name="tingkatan">
+                            <option value="" <?= old('tingkatan') == '' ? 'selected' : '' ?>>-- Pilih --</option>
+                            <option value="SMA" <?= old('tingkatan') == 'SMA' ? 'selected' : '' ?>>SMA</option>
+                            <option value="SMP" <?= old('tingkatan') == 'SMP' ? 'selected' : '' ?>>SMP</option>
+                            <option value="SD"  <?= old('tingkatan') == 'SD' ? 'selected' : '' ?>>SD</option>
+                        </select>
+                    </div>
 
                     <div class="form-group row">
                         <label for="nama" class="col-sm-2 col-form-label">Judul Soal</label>
